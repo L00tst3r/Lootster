@@ -49,7 +49,7 @@ jobs:
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Install theme
-        run:  hugo new site quickstart && cd quickstart && git submodule add https://github.com/colinwilson/lotusdocs themes/lotusdocs && echo "theme = 'ananke'" >> hugo.toml &&  hugo new docs/example-page.m"
+        run:  hugo new site quickstart && cd quickstart && git submodule add https://github.com/colinwilson/lotusdocs themes/lotusdocs && echo "theme = 'ananke'" >> hugo.toml &&  hugo new docs/example-page.md
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
